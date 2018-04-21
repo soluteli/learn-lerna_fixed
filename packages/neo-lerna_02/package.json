@@ -1,6 +1,6 @@
 {
   "name": "neo-lerna_02",
-  "version": "0.0.4-0",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "neo-lerna_01": "^0.0.3"
+    "neo-lerna_01": "^0.0.4"
   }
 }
