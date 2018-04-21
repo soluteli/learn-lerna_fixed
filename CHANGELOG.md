@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.18"></a>
+## <small>0.0.18 (2018-04-21)</small>
+
+
+
+
+
+**Note:** Version bump only for package undefined
+
 <a name="0.0.17"></a>
 ## [0.0.17](https://github.com/soluteli/learn-lerna_fixed/compare/v0.0.16...v0.0.17) (2018-04-21)
 
