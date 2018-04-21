@@ -3,10 +3,17 @@
   "packages": [
     "packages/*"
   ],
-  "version": "0.0.14",
-  "command": {
-    "publish": {
-      "conventional-commits": "true"
-    }
+  "version": "0.0.15",
+  "changelog": {
+    "repo": "soluteli/learn-lerna_fixed",
+    "labels": {
+      "tag: new feature": ":rocket: New Feature",
+      "tag: breaking change": ":boom: Breaking Change",
+      "tag: bug fix": ":bug: Bug Fix",
+      "tag: enhancement": ":nail_care: Enhancement",
+      "tag: documentation": ":memo: Documentation",
+      "tag: internal": ":house: Internal"
+    },
+    "cacheDir": ".changelog"
   }
 }
