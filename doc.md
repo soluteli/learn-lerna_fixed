@@ -1,4 +1,4 @@
-# 大杀器 —— 使用 lerna  同时掌控多个 package 开发 
+# 大杀器 —— 使用 lerna 掌控多个 package 开发 
 
 ## lerna 是什么？
 > Lerna is a tool that optimizes the workflow around managing multi-package repositories with git and npm.
@@ -62,6 +62,16 @@ lerna 有两种包管理模式, 下面介绍下这两种模式的区别
 3. 单个模块（该模块被其它模块依赖）代码更新时，`该模块`和`依赖该模块的所有模块`的版本都会更新，但更新的发布版本需要分别在命令行的交互操作指定
 
 ## 常用命令
+### init
+> Create a new Lerna repo or upgrade an existing repo to the current version of Lerna.   
+
+在当前文件夹内创建一个 lerna 项目（该文件夹需要是一个 git 仓库）或者更新当前项目的 lerna 版本。
+
+| 命令 | 说明 |
+| --- | --- |
+| `lerna init` | 以 fixed 模式初始化项目 |
+| `lerna init ( -i | --independent )` | 以 independent 模式初始化项目 |
+
 ### bootstrap
 `bootstrap` 命令执行的操作：
 1. 执行每个 package 的 `npm install`
@@ -71,10 +81,9 @@ lerna 有两种包管理模式, 下面介绍下这两种模式的区别
 
 | 命令 | 说明 |
 | --- | --- |
-| `lerna init` | - |
-| `lerna init ci` | 将 `bootstrap` 过程中的 `npm install` 替换为 `npm ci` |
+| `lerna bootstrap ci` | 将 `bootstrap` 过程中的 `npm install` 替换为 `npm ci` |
 
-## add
+#### add
 | 命令 | 说明 |
 | --- | --- |
 | `lerna add module-1 --scope=module-2` | Install module-1 to module-2 |
@@ -82,15 +91,41 @@ lerna 有两种包管理模式, 下面介绍下这两种模式的区别
 | `lerna add module-1` | Install module-1 in all modules except module-1 |
 
 ### publish
-| 命令 | 说明 |
-| --- | --- |
-| `lerna publish --conventional-commits` | 生成 CHANGELOG（TODO：不能生成 commit 信息） |
-| `lerna publish --skip-git` | 跳过 git 操作 |
-| `lerna publish --skip-npm` | 跳过 npm 发布操作 |
-| `lerna publish --force-publish [packages | *]` | gitdiff 的检测，直接更新 |
-| `lerna publish --exact` | 将被依赖模块的在各模块依赖列表中改为精确版本：`^x.x.x` -> `x.x.x` |
-| `lerna publish --npm-tag=next` | 发布一个预发布版本, 只有使用`npm i <package>@<tag>` 才会安装该版本 |
-| `lerna publish --cd-version (major | minor | patch | premajor | preminor | prepatch | prerelease)` | 直接指定 publish 版本号更新方式 |
+<table>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+<tr>
+<td>`lerna publish --conventional-commits`</td>
+<td>生成 CHANGELOG（TODO：不能生成 commit 信息）</td>
+</tr>
+<tr>
+<td>`lerna publish --skip-git`</td>
+<td>跳过 git 操作</td>
+</tr>
+<tr>
+<td>`lerna publish --skip-npm`</td>
+<td>跳过 npm 发布操作</td>
+</tr>
+<tr>
+<td>`lerna publish --force-publish [packages | *]`</td>
+<td>gitdiff 的检测，直接更新</td>
+</tr>
+<tr>
+<td>`lerna publish --exact`</td>
+<td>将被依赖模块的在各模块依赖列表中改为精确版本：`^x.x.x` -> `x.x.x`</td>
+</tr>
+<tr>
+<td>`lerna publish --npm-tag=next`</td>
+<td>发布一个预发布版本, 只有使用`npm i <package>@<tag>` 才会安装该版本</td>
+</tr>
+<tr>
+<td>`lerna publish --cd-version (major | minor | patch | premajor | preminor | prepatch | prerelease)`</td>
+<td>直接指定 publish 版本号更新方式</td>
+</tr>
+</table>
+
 
 注意：
 每次 publish 都是一次 git 提交, 我们可以通过在 `lerna.json` 中添加配置格式化每次的信息：
