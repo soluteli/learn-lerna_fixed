@@ -1,4 +1,4 @@
-# 大杀器 —— 使用 lerna 掌控多个 package 开发 
+# [ 大杀器 ] 使用 lerna 掌控多个 npm 模块开发 
 
 ## lerna 是什么？
 > Lerna is a tool that optimizes the workflow around managing multi-package repositories with git and npm.
