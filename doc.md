@@ -52,14 +52,19 @@ lerna 有两种包管理模式, 下面介绍下这两种模式的区别
 `Fixed/Locked` 模式有如下特点：
 1. `lerna.json` 中的 version 永远和版本最新的子模块保持一致
 2. 单个模块（该模块没有被其它模块依赖）代码更新时，该模块和 `lerna.json` 的 version 会更新为最新发布版本
-3. 单个模块（该模块被其它模块依赖）代码更新时，`该模块`和`依赖该模块的所有模块`以及 `lerna.json` 的 version 都会更新为最新发布版本
+3. 单个模块（该模块被其它模块依赖）代码更新时，`该模块`和`依赖该模块的所有模块`以及 `lerna.json` 的 version 都会更新为最新发布版本   
+
+`Fixed/Locked` 模式的 [demo](https://github.com/soluteli/learn-lerna_fixed)
+
 
 ### Independent mode (--independent)
 `Independent mode` 模式开启方式: `lerna init ( -i | --independent )`
 该模式有如下特点：
 1. 每个模块的版本号独立管理
 2. 单个模块（该模块没有被其它模块依赖）代码更新时，只有该模块的版本号才会更新
-3. 单个模块（该模块被其它模块依赖）代码更新时，`该模块`和`依赖该模块的所有模块`的版本都会更新，但更新的发布版本需要分别在命令行的交互操作指定
+3. 单个模块（该模块被其它模块依赖）代码更新时，`该模块`和`依赖该模块的所有模块`的版本都会更新，但更新的发布版本需要分别在命令行的交互操作指定   
+
+`Independent` 模式的 [demo](https://github.com/soluteli/learn-lerna_independent)
 
 ## 常用命令
 ### init
