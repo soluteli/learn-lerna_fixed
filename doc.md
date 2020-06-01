@@ -102,8 +102,8 @@ lerna 有两种包管理模式, 下面介绍下这两种模式的区别
 <th>说明</th>
 </tr>
 <tr>
-<td>`lerna publish --conventional-commits`</td>
-<td>生成 CHANGELOG（TODO：不能生成 commit 信息）</td>
+<td>`lerna version --conventional-commits`</td>
+<td>生成 CHANGELOG</td>
 </tr>
 <tr>
 <td>`lerna publish --skip-git`</td>
@@ -142,10 +142,6 @@ lerna 有两种包管理模式, 下面介绍下这两种模式的区别
     }
   }
 ```
-
-
-## TODO
-- [ ] `lerna publish --conventional-commits` 生成 commit 格式对应的信息。
 
 ## 参考链接
 - [lerna Github](https://github.com/lerna)
